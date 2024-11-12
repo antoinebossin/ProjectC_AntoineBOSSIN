@@ -8,7 +8,7 @@ int main(int argc, const int* argv[]) {
 
 
 	// Créer un tableau d'entiers avec les arguments passés
-	int taille = argc - 1;  // Le nombre d'éléments à trier (argc - 1, car argv[0] est le nom du programme)
+	int taille = argc - 1;// Le nombre d'éléments à trier (argc - 1, car argv[0] est le nom du programme)
 	int* tableau = new int[taille];
 
 	// Remplir le tableau avec les arguments (convertis en entier)
