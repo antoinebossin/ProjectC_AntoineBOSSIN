@@ -1,6 +1,45 @@
 //< >
 #include <iostream>
-#include <string> 
+
+struct IntStack10 {
+	int * tab;
+	int top;
+	int size;
+	void init(int new_size) {
+		top = 0;
+		size = new_size;
+		tab = new int[size];
+		
+		
+		for (int i = 0; i < size; i = i + 1) {
+			tab[i] = 0;
+		};
+	};
+
+	void dinit() {
+
+		delete tab;
+	}
+	void push(int valeur) {
+		tab[top] = valeur;
+		top += 1;
+	};
+
+	void pop() {
+		tab[top] = 0;
+		top -= 1;
+	};
+
+	void print() {
+		for (int i = 0; i < top; i = i + 1) {
+			std::cout << tab[i] << "";
+		};
+	};
+};
+
+//une première version horrible
+/*
+
 struct IntStack5 {
 	int a;
 	int b;
@@ -124,22 +163,24 @@ struct IntStack5 {
 	};
 };
 
-
+*/
 
 
 int main() {
 
-	IntStack5 stack;
-	stack.ini() ;
+	IntStack10 stack;
+	stack.init(8) ;
 	
 	stack.push(1);
 	stack.push(2);
 	stack.push(3);
 
 	stack.print();
-	stack.full();
+
 	stack.pop();
 	stack.print();
-
+	stack.dinit();
 
 }
+
+
